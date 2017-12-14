@@ -20,26 +20,22 @@ var out = {
 }
 
 // ---dev---
-gulp.task('testLess', function () {
+gulp.task('less2css', function () {
 	gulp.src(path.less)
 		.pipe(less())
 		.pipe(gulp.dest('./css'))
 })
 
-// 监听自动编译less
-gulp.task('watchLess', function () {
-    gulp.watch(path.less, ['testLess']) 
-})
-
 /* 实时监控，启动静态服务器 */
-gulp.task('watch', ['watchLess'], function () {
+gulp.task('watch', ['less2css'], function () {
 	browserSync.init({
 		server: {
+			port: 3000,
 			baseDir: './'
 		}
 	})
 	gulp.watch(path.html).on('change', browserSync.reload)
-	gulp.watch(path.css).on('change', browserSync.reload)
+	gulp.watch(path.less, ['less2css']).on('change', browserSync.reload)
 	gulp.watch(path.js).on('change', browserSync.reload)
 })
 
