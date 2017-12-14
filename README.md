@@ -1,7 +1,7 @@
 # wacomchina
 
 > 访问地址：<http://www.wacomchina.cn>
->   通过Gulp构建工具结合NodeJS快速开发前端静态页，提高项目开发效率。
+通过Gulp构建工具结合NodeJS快速开发前端静态页。
 
 ## 开发
 ### package.json文件
@@ -29,8 +29,8 @@ node_modules
 dist/
 ```
 ### Gulpfile.js任务
-开发模式``gulp default``：less文件编译css，浏览器同步。
-生产模式``gulp build``：设置输入输出文件，压缩html、css、images、js并输出文件到dist构建目录下。
+* 开发模式``gulp default``：less文件编译css，浏览器同步。
+* 生产模式``gulp build``：设置输入输出文件，压缩html、css、images、js并输出文件到dist构建目录下。
 
 ### 项目开发
 开始啦！
